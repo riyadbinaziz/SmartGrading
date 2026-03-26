@@ -408,7 +408,18 @@ class Ui_Home(object):
         self.result_tableview = QTableView(self.results_stackwidget_page)
         self.result_tableview.setObjectName(u"result_tableview")
 
-        self.gridLayout_2.addWidget(self.result_tableview, 0, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.result_tableview, 1, 0, 1, 1)
+
+        self.result_summary_label = QLabel(self.results_stackwidget_page)
+        self.result_summary_label.setObjectName(u"result_summary_label")
+        font8 = QFont()
+        font8.setFamilies([u"Arial"])
+        font8.setPointSize(14)
+        font8.setBold(True)
+        font8.setUnderline(True)
+        self.result_summary_label.setFont(font8)
+
+        self.gridLayout_2.addWidget(self.result_summary_label, 0, 0, 1, 1, Qt.AlignmentFlag.AlignHCenter)
 
         self.homepage_stackwidget.addWidget(self.results_stackwidget_page)
 
@@ -424,7 +435,7 @@ class Ui_Home(object):
 
         self.mainStackWidget.setCurrentIndex(1)
         self.createquiz_sidebar_btn_home.setDefault(False)
-        self.homepage_stackwidget.setCurrentIndex(1)
+        self.homepage_stackwidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(Home)
@@ -463,5 +474,6 @@ class Ui_Home(object):
         self.createquiz_opt2_label.setText(QCoreApplication.translate("Home", u"Option 2:", None))
         self.show_all_qs_btn.setText(QCoreApplication.translate("Home", u"Show All Question", None))
         self.createquiz_add_qs_btn.setText(QCoreApplication.translate("Home", u"Add Question", None))
+        self.result_summary_label.setText(QCoreApplication.translate("Home", u"Assessment Results Summary", None))
     # retranslateUi
 

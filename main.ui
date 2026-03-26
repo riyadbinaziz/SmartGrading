@@ -261,7 +261,7 @@
         <item>
          <widget class="QStackedWidget" name="homepage_stackwidget">
           <property name="currentIndex">
-           <number>1</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="attendquiz_stackwidget_page">
            <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -690,8 +690,23 @@
           </widget>
           <widget class="QWidget" name="results_stackwidget_page">
            <layout class="QGridLayout" name="gridLayout_2">
-            <item row="0" column="0">
+            <item row="1" column="0">
              <widget class="QTableView" name="result_tableview"/>
+            </item>
+            <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignHCenter">
+             <widget class="QLabel" name="result_summary_label">
+              <property name="font">
+               <font>
+                <family>Arial</family>
+                <pointsize>14</pointsize>
+                <bold>true</bold>
+                <underline>true</underline>
+               </font>
+              </property>
+              <property name="text">
+               <string>Assessment Results Summary</string>
+              </property>
+             </widget>
             </item>
            </layout>
           </widget>

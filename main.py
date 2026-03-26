@@ -4,6 +4,7 @@ from ui_main import Ui_Home
 from database import QuizDatabase
 from auth import AuthHandler
 from create_quiz import CreateQuizHandler
+from result_page import ResultPageHandler
 
 class MyQuizApp(QMainWindow):
     def __init__(self):
@@ -20,23 +21,35 @@ class MyQuizApp(QMainWindow):
 
         self.create_quiz_logic = CreateQuizHandler(self.ui, self.db)
 
+        self.result_logic = ResultPageHandler(self.ui, self.db, self)
+
         # --- Sidebar Navigation Logic ---
-        # Based on image_b3a022.png names
+        
+        # 1. Attend Quiz
         self.ui.attendquiz_sidebar_btn_home.clicked.connect(
             lambda: self.ui.homepage_stackwidget.setCurrentWidget(self.ui.attendquiz_stackwidget_page)
         )
+        
+        # 2. Create Quiz
         self.ui.createquiz_sidebar_btn_home.clicked.connect(
             lambda: self.ui.homepage_stackwidget.setCurrentWidget(self.ui.createquiz_stackwidget_page)
         )
-        self.ui.results_sidebar_btn_home.clicked.connect(
-            lambda: self.ui.homepage_stackwidget.setCurrentWidget(self.ui.results_stackwidget_page)
-        )
         
-        # Exit Button
+        # 3. Results (Use the function instead of lambda to refresh the table)
+        self.ui.results_sidebar_btn_home.clicked.connect(self.navigate_to_results)
+        
+        # 4. Exit Button (Move this OUTSIDE the function so it works immediately)
         self.ui.exit_sidebar_btn_home.clicked.connect(self.close)
 
         # Ensure we start on the login page
         self.ui.mainStackWidget.setCurrentWidget(self.ui.login_page)
+
+    # This function should be a method of your MyQuizApp class (properly indented)
+    def navigate_to_results(self):
+        # Switch the inner stack to results
+        self.ui.homepage_stackwidget.setCurrentWidget(self.ui.results_stackwidget_page)
+        # Call the load function from your results handler
+        self.result_logic.load_user_results()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
