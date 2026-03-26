@@ -25,7 +25,7 @@ class Ui_Home(object):
     def setupUi(self, Home):
         if not Home.objectName():
             Home.setObjectName(u"Home")
-        Home.resize(674, 564)
+        Home.resize(657, 551)
         self.homeWidget = QWidget(Home)
         self.homeWidget.setObjectName(u"homeWidget")
         self.verticalLayout = QVBoxLayout(self.homeWidget)
@@ -289,39 +289,6 @@ class Ui_Home(object):
         self.createquiz_stackwidget_page.setObjectName(u"createquiz_stackwidget_page")
         self.gridLayout_3 = QGridLayout(self.createquiz_stackwidget_page)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.createquiz_qs_label = QLabel(self.createquiz_stackwidget_page)
-        self.createquiz_qs_label.setObjectName(u"createquiz_qs_label")
-        self.createquiz_qs_label.setFont(font3)
-
-        self.gridLayout_3.addWidget(self.createquiz_qs_label, 1, 0, 1, 1)
-
-        self.createquiz_verticalspacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-        self.gridLayout_3.addItem(self.createquiz_verticalspacer, 9, 0, 1, 2)
-
-        self.createquiz_opt2_label = QLabel(self.createquiz_stackwidget_page)
-        self.createquiz_opt2_label.setObjectName(u"createquiz_opt2_label")
-        self.createquiz_opt2_label.setFont(font3)
-
-        self.gridLayout_3.addWidget(self.createquiz_opt2_label, 5, 0, 1, 1)
-
-        self.createquiz_opt2_lineedit = QLineEdit(self.createquiz_stackwidget_page)
-        self.createquiz_opt2_lineedit.setObjectName(u"createquiz_opt2_lineedit")
-
-        self.gridLayout_3.addWidget(self.createquiz_opt2_lineedit, 5, 1, 1, 1)
-
-        self.createquiz_ans_label = QLabel(self.createquiz_stackwidget_page)
-        self.createquiz_ans_label.setObjectName(u"createquiz_ans_label")
-        self.createquiz_ans_label.setFont(font3)
-
-        self.gridLayout_3.addWidget(self.createquiz_ans_label, 2, 0, 1, 1)
-
-        self.createquiz_opt1_label = QLabel(self.createquiz_stackwidget_page)
-        self.createquiz_opt1_label.setObjectName(u"createquiz_opt1_label")
-        self.createquiz_opt1_label.setFont(font3)
-
-        self.gridLayout_3.addWidget(self.createquiz_opt1_label, 4, 0, 1, 1)
-
         self.createquiz_other_option_label = QLabel(self.createquiz_stackwidget_page)
         self.createquiz_other_option_label.setObjectName(u"createquiz_other_option_label")
         font6 = QFont()
@@ -329,27 +296,34 @@ class Ui_Home(object):
         font6.setBold(False)
         self.createquiz_other_option_label.setFont(font6)
 
-        self.gridLayout_3.addWidget(self.createquiz_other_option_label, 3, 0, 1, 2)
+        self.gridLayout_3.addWidget(self.createquiz_other_option_label, 3, 0, 1, 1)
 
         self.createquiz_opt1_lineedit = QLineEdit(self.createquiz_stackwidget_page)
         self.createquiz_opt1_lineedit.setObjectName(u"createquiz_opt1_lineedit")
 
-        self.gridLayout_3.addWidget(self.createquiz_opt1_lineedit, 4, 1, 1, 1)
-
-        self.createquiz_ans_lineedit = QLineEdit(self.createquiz_stackwidget_page)
-        self.createquiz_ans_lineedit.setObjectName(u"createquiz_ans_lineedit")
-
-        self.gridLayout_3.addWidget(self.createquiz_ans_lineedit, 2, 1, 1, 1)
+        self.gridLayout_3.addWidget(self.createquiz_opt1_lineedit, 4, 2, 1, 1)
 
         self.createquiz_opt3_lineedit = QLineEdit(self.createquiz_stackwidget_page)
         self.createquiz_opt3_lineedit.setObjectName(u"createquiz_opt3_lineedit")
 
-        self.gridLayout_3.addWidget(self.createquiz_opt3_lineedit, 6, 1, 1, 1)
+        self.gridLayout_3.addWidget(self.createquiz_opt3_lineedit, 6, 2, 1, 1)
 
-        self.createquiz_qs_lineedit = QLineEdit(self.createquiz_stackwidget_page)
-        self.createquiz_qs_lineedit.setObjectName(u"createquiz_qs_lineedit")
+        self.createquiz_ans_lineedit = QLineEdit(self.createquiz_stackwidget_page)
+        self.createquiz_ans_lineedit.setObjectName(u"createquiz_ans_lineedit")
 
-        self.gridLayout_3.addWidget(self.createquiz_qs_lineedit, 1, 1, 1, 1)
+        self.gridLayout_3.addWidget(self.createquiz_ans_lineedit, 2, 2, 1, 1)
+
+        self.createquiz_opt1_label = QLabel(self.createquiz_stackwidget_page)
+        self.createquiz_opt1_label.setObjectName(u"createquiz_opt1_label")
+        self.createquiz_opt1_label.setFont(font3)
+
+        self.gridLayout_3.addWidget(self.createquiz_opt1_label, 4, 0, 1, 1)
+
+        self.createquiz_qs_label = QLabel(self.createquiz_stackwidget_page)
+        self.createquiz_qs_label.setObjectName(u"createquiz_qs_label")
+        self.createquiz_qs_label.setFont(font3)
+
+        self.gridLayout_3.addWidget(self.createquiz_qs_label, 1, 0, 1, 1)
 
         self.createquiz_opt3_label = QLabel(self.createquiz_stackwidget_page)
         self.createquiz_opt3_label.setObjectName(u"createquiz_opt3_label")
@@ -357,19 +331,74 @@ class Ui_Home(object):
 
         self.gridLayout_3.addWidget(self.createquiz_opt3_label, 6, 0, 1, 1)
 
+        self.createquiz_opt2_lineedit = QLineEdit(self.createquiz_stackwidget_page)
+        self.createquiz_opt2_lineedit.setObjectName(u"createquiz_opt2_lineedit")
+
+        self.gridLayout_3.addWidget(self.createquiz_opt2_lineedit, 5, 2, 1, 1)
+
         self.add_new_qs_label = QLabel(self.createquiz_stackwidget_page)
         self.add_new_qs_label.setObjectName(u"add_new_qs_label")
         self.add_new_qs_label.setFont(font5)
         self.add_new_qs_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.gridLayout_3.addWidget(self.add_new_qs_label, 0, 0, 1, 2)
+        self.gridLayout_3.addWidget(self.add_new_qs_label, 0, 0, 1, 3)
+
+        self.all_qs_frame = QFrame(self.createquiz_stackwidget_page)
+        self.all_qs_frame.setObjectName(u"all_qs_frame")
+        self.all_qs_frame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.all_qs_frame.setFrameShadow(QFrame.Shadow.Raised)
+        self.gridLayout_7 = QGridLayout(self.all_qs_frame)
+        self.gridLayout_7.setObjectName(u"gridLayout_7")
+        self.all_qs_label = QLabel(self.all_qs_frame)
+        self.all_qs_label.setObjectName(u"all_qs_label")
+        font7 = QFont()
+        font7.setPointSize(11)
+        font7.setBold(True)
+        self.all_qs_label.setFont(font7)
+
+        self.gridLayout_7.addWidget(self.all_qs_label, 0, 0, 1, 1, Qt.AlignmentFlag.AlignHCenter)
+
+        self.all_qs_tableview = QTableView(self.all_qs_frame)
+        self.all_qs_tableview.setObjectName(u"all_qs_tableview")
+
+        self.gridLayout_7.addWidget(self.all_qs_tableview, 1, 0, 1, 1)
+
+
+        self.gridLayout_3.addWidget(self.all_qs_frame, 8, 0, 1, 3)
+
+        self.createquiz_ans_label = QLabel(self.createquiz_stackwidget_page)
+        self.createquiz_ans_label.setObjectName(u"createquiz_ans_label")
+        self.createquiz_ans_label.setFont(font3)
+
+        self.gridLayout_3.addWidget(self.createquiz_ans_label, 2, 0, 1, 1)
+
+        self.createquiz_opt2_label = QLabel(self.createquiz_stackwidget_page)
+        self.createquiz_opt2_label.setObjectName(u"createquiz_opt2_label")
+        self.createquiz_opt2_label.setFont(font3)
+
+        self.gridLayout_3.addWidget(self.createquiz_opt2_label, 5, 0, 1, 1)
+
+        self.show_all_qs_btn = QPushButton(self.createquiz_stackwidget_page)
+        self.show_all_qs_btn.setObjectName(u"show_all_qs_btn")
+        self.show_all_qs_btn.setMaximumSize(QSize(130, 16777215))
+
+        self.gridLayout_3.addWidget(self.show_all_qs_btn, 7, 2, 1, 1)
 
         self.createquiz_add_qs_btn = QPushButton(self.createquiz_stackwidget_page)
         self.createquiz_add_qs_btn.setObjectName(u"createquiz_add_qs_btn")
         self.createquiz_add_qs_btn.setMaximumSize(QSize(170, 16777215))
         self.createquiz_add_qs_btn.setFont(font3)
 
-        self.gridLayout_3.addWidget(self.createquiz_add_qs_btn, 8, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.createquiz_add_qs_btn, 7, 0, 1, 1)
+
+        self.createquiz_qs_lineedit = QLineEdit(self.createquiz_stackwidget_page)
+        self.createquiz_qs_lineedit.setObjectName(u"createquiz_qs_lineedit")
+
+        self.gridLayout_3.addWidget(self.createquiz_qs_lineedit, 1, 2, 1, 1)
+
+        self.createquiz_verticalspacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.gridLayout_3.addItem(self.createquiz_verticalspacer, 9, 0, 1, 3)
 
         self.homepage_stackwidget.addWidget(self.createquiz_stackwidget_page)
         self.results_stackwidget_page = QWidget()
@@ -395,14 +424,14 @@ class Ui_Home(object):
 
         self.mainStackWidget.setCurrentIndex(1)
         self.createquiz_sidebar_btn_home.setDefault(False)
-        self.homepage_stackwidget.setCurrentIndex(2)
+        self.homepage_stackwidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(Home)
     # setupUi
 
     def retranslateUi(self, Home):
-        Home.setWindowTitle(QCoreApplication.translate("Home", u"MainWindow", None))
+        Home.setWindowTitle(QCoreApplication.translate("Home", u"SmartGrading", None))
         self.password_label_login.setText(QCoreApplication.translate("Home", u"Password:", None))
         self.username_label_login.setText(QCoreApplication.translate("Home", u"Username:", None))
         self.login_btn_login.setText(QCoreApplication.translate("Home", u"Login", None))
@@ -424,13 +453,15 @@ class Ui_Home(object):
         self.next_qs_btn.setText(QCoreApplication.translate("Home", u"Next", None))
         self.restart_quiz_btn.setText(QCoreApplication.translate("Home", u"Restart Quiz", None))
         self.show_result_label.setText(QCoreApplication.translate("Home", u"You got x marks!", None))
-        self.createquiz_qs_label.setText(QCoreApplication.translate("Home", u"Question:", None))
-        self.createquiz_opt2_label.setText(QCoreApplication.translate("Home", u"Option 2:", None))
-        self.createquiz_ans_label.setText(QCoreApplication.translate("Home", u"Answer:", None))
-        self.createquiz_opt1_label.setText(QCoreApplication.translate("Home", u"Option 1:", None))
         self.createquiz_other_option_label.setText(QCoreApplication.translate("Home", u"Other Options:", None))
+        self.createquiz_opt1_label.setText(QCoreApplication.translate("Home", u"Option 1:", None))
+        self.createquiz_qs_label.setText(QCoreApplication.translate("Home", u"Question:", None))
         self.createquiz_opt3_label.setText(QCoreApplication.translate("Home", u"Option 3:", None))
         self.add_new_qs_label.setText(QCoreApplication.translate("Home", u"Add New Question", None))
+        self.all_qs_label.setText(QCoreApplication.translate("Home", u"All Questions", None))
+        self.createquiz_ans_label.setText(QCoreApplication.translate("Home", u"Answer:", None))
+        self.createquiz_opt2_label.setText(QCoreApplication.translate("Home", u"Option 2:", None))
+        self.show_all_qs_btn.setText(QCoreApplication.translate("Home", u"Show All Question", None))
         self.createquiz_add_qs_btn.setText(QCoreApplication.translate("Home", u"Add Question", None))
     # retranslateUi
 

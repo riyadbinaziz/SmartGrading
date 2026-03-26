@@ -72,6 +72,12 @@ class QuizDatabase:
         self.cursor.execute("SELECT * FROM questions ORDER BY RANDOM() LIMIT ?", (limit,))
         return self.cursor.fetchall()
 
+    def get_all_questions(self):
+        """Fetches all fields: id, text, answer, opt1, opt2, opt3"""
+        # Using * ensures you get all 6 columns
+        self.cursor.execute("SELECT * FROM questions")
+        return self.cursor.fetchall()
+
     # --- RESULT FEATURES ---
     def save_quiz_result(self, user_id, score, total):
         percentage = round((score / total * 100), 2) if total > 0 else 0

@@ -3,13 +3,13 @@ from PySide6.QtWidgets import QApplication, QMainWindow
 from ui_main import Ui_Home
 from database import QuizDatabase
 from auth import AuthHandler
+from create_quiz import CreateQuizHandler
 
 class MyQuizApp(QMainWindow):
     def __init__(self):
         super().__init__()
         self.ui = Ui_Home()
         self.ui.setupUi(self)
-        self.setWindowTitle("SmartGrading")
 
         # Initialize shared components
         self.db = QuizDatabase()
@@ -17,6 +17,8 @@ class MyQuizApp(QMainWindow):
 
         # Initialize Auth Handler
         self.auth = AuthHandler(self.ui, self.db, self)
+
+        self.create_quiz_logic = CreateQuizHandler(self.ui, self.db)
 
         # --- Sidebar Navigation Logic ---
         # Based on image_b3a022.png names
