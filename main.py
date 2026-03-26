@@ -1,4 +1,5 @@
 import sys
+from PySide6 import QtWidgets
 from PySide6.QtWidgets import QApplication, QMainWindow
 from ui_main import Ui_Home
 from database import QuizDatabase
@@ -48,6 +49,9 @@ class MyQuizApp(QMainWindow):
         # Ensure we start on the login page
         self.ui.mainStackWidget.setCurrentWidget(self.ui.login_page)
 
+        # This forces the table to fill the entire width of the frame
+        self.ui.all_qs_tableview.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
+
     # This function should be a method of your MyQuizApp class (properly indented)
     def navigate_to_results(self):
         # Switch the inner stack to results
@@ -61,6 +65,8 @@ class MyQuizApp(QMainWindow):
         self.ui.homepage_stackwidget.setCurrentWidget(self.ui.attendquiz_stackwidget_page)
         # Call the reset function from your attend quiz handler
         self.attend_quiz_logic.prepare_initial_state()
+
+    
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

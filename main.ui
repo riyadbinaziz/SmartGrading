@@ -15,19 +15,7 @@
   </property>
   <widget class="QWidget" name="homeWidget">
    <property name="styleSheet">
-    <string notr="true">QLineEdit {
-    background-color: #ffffff;
-    border: 1px solid #dcdde1;
-    border-radius: 8px;
-    padding: 8px 12px;
-    font-size: 13px;
-    color: #2f3640;
-}
-
-QLineEdit:focus {
-    border: 2px solid #3498db; 
-    background-color: #f5faff;
-}</string>
+    <string notr="true"/>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="spacing">
@@ -527,7 +515,7 @@ QPushButton#logout_sidebar_btn_home:hover {
         <item>
          <widget class="QStackedWidget" name="homepage_stackwidget">
           <property name="currentIndex">
-           <number>2</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="attendquiz_stackwidget_page">
            <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -954,10 +942,17 @@ QPushButton#next_qs_btn:pressed {
     background-color: transparent; 
 }
 
+#add_new_qs_frame{
+	background-color: white;
+    border-radius: 20px;
+    padding: 0px;
+    border: 1px solid #e0e6ed;
+}
+
 #all_qs_frame {
     background-color: white;
     border-radius: 20px;
-    padding: 30px;
+    padding: 2px;
     border: 1px solid #e0e6ed;
 }
 
@@ -973,14 +968,22 @@ QLabel {
     color: #1a2a6c;
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
+}
+
+#all_qs_label{
+    color: #1a2a6c;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+
 }
 
 QLineEdit {
     background-color: #f8f9fa;
     border: 2px solid #e9ecef;
     border-radius: 10px;
-    padding: 10px;
+    padding: 5px;
     font-size: 13px;
     color: #2c3e50;
 }
@@ -995,8 +998,8 @@ QPushButton {
     color: white;
     font-weight: bold;
     border-radius: 10px;
-    padding: 12px;
-    min-width: 140px;
+    padding: 7px;
+    min-width: 120px;
 }
 
 QPushButton:hover {
@@ -1014,100 +1017,260 @@ QPushButton:hover {
 }</string>
            </property>
            <layout class="QGridLayout" name="gridLayout_3">
-            <item row="3" column="0">
-             <widget class="QLabel" name="createquiz_other_option_label">
-              <property name="font">
-               <font>
-                <pointsize>-1</pointsize>
-                <bold>true</bold>
-               </font>
+            <item row="0" column="0">
+             <widget class="QFrame" name="add_new_qs_frame">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
               </property>
-              <property name="text">
-               <string>Other Options:</string>
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
               </property>
-             </widget>
-            </item>
-            <item row="4" column="2">
-             <widget class="QLineEdit" name="createquiz_opt1_lineedit"/>
-            </item>
-            <item row="6" column="2">
-             <widget class="QLineEdit" name="createquiz_opt3_lineedit"/>
-            </item>
-            <item row="2" column="2">
-             <widget class="QLineEdit" name="createquiz_ans_lineedit"/>
-            </item>
-            <item row="4" column="0">
-             <widget class="QLabel" name="createquiz_opt1_label">
-              <property name="font">
-               <font>
-                <pointsize>-1</pointsize>
-                <bold>true</bold>
-               </font>
+              <property name="frameShadow">
+               <enum>QFrame::Shadow::Raised</enum>
               </property>
-              <property name="text">
-               <string>Option 1:</string>
-              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_4">
+               <item alignment="Qt::AlignmentFlag::AlignLeft">
+                <widget class="QLabel" name="add_new_qs_label">
+                 <property name="font">
+                  <font>
+                   <pointsize>-1</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Create New Question</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QFrame" name="question_frame">
+                 <property name="frameShape">
+                  <enum>QFrame::Shape::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Shadow::Raised</enum>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_5">
+                  <item>
+                   <widget class="QLabel" name="createquiz_qs_label">
+                    <property name="font">
+                     <font>
+                      <pointsize>-1</pointsize>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Question:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="createquiz_qs_lineedit"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QFrame" name="answer_frame">
+                 <property name="frameShape">
+                  <enum>QFrame::Shape::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Shadow::Raised</enum>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_8">
+                  <item>
+                   <widget class="QLabel" name="createquiz_ans_label">
+                    <property name="font">
+                     <font>
+                      <pointsize>-1</pointsize>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Answer:  </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="createquiz_ans_lineedit"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="createquiz_other_option_label">
+                 <property name="font">
+                  <font>
+                   <pointsize>-1</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Other Options:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QFrame" name="opt1_frame">
+                 <property name="frameShape">
+                  <enum>QFrame::Shape::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Shadow::Raised</enum>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_7">
+                  <item>
+                   <widget class="QLabel" name="createquiz_opt1_label">
+                    <property name="font">
+                     <font>
+                      <pointsize>-1</pointsize>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Option 1:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="createquiz_opt1_lineedit"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QFrame" name="opt2_frame">
+                 <property name="frameShape">
+                  <enum>QFrame::Shape::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Shadow::Raised</enum>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_6">
+                  <item>
+                   <widget class="QLabel" name="createquiz_opt2_label">
+                    <property name="font">
+                     <font>
+                      <pointsize>-1</pointsize>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Option 2:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="createquiz_opt2_lineedit"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QFrame" name="opt3_frame">
+                 <property name="frameShape">
+                  <enum>QFrame::Shape::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Shadow::Raised</enum>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_4">
+                  <item>
+                   <widget class="QLabel" name="createquiz_opt3_label">
+                    <property name="font">
+                     <font>
+                      <pointsize>-1</pointsize>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Option 3:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="createquiz_opt3_lineedit"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QFrame" name="btn_frame">
+                 <property name="frameShape">
+                  <enum>QFrame::Shape::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Shadow::Raised</enum>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_9">
+                  <item row="0" column="1">
+                   <widget class="QPushButton" name="createquiz_add_qs_btn">
+                    <property name="maximumSize">
+                     <size>
+                      <width>170</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>10</pointsize>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Add Question</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QPushButton" name="show_all_qs_btn">
+                    <property name="maximumSize">
+                     <size>
+                      <width>130</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Show All Questions</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="3">
+                   <spacer name="btn_horizontalSpacer">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
              </widget>
             </item>
             <item row="1" column="0">
-             <widget class="QLabel" name="createquiz_qs_label">
-              <property name="font">
-               <font>
-                <pointsize>-1</pointsize>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Question:</string>
-              </property>
-             </widget>
-            </item>
-            <item row="6" column="0">
-             <widget class="QLabel" name="createquiz_opt3_label">
-              <property name="font">
-               <font>
-                <pointsize>-1</pointsize>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Option 3:</string>
-              </property>
-             </widget>
-            </item>
-            <item row="5" column="2">
-             <widget class="QLineEdit" name="createquiz_opt2_lineedit"/>
-            </item>
-            <item row="0" column="0" colspan="3">
-             <widget class="QLabel" name="add_new_qs_label">
-              <property name="font">
-               <font>
-                <pointsize>-1</pointsize>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Add New Question</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignmentFlag::AlignCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item row="8" column="0" colspan="3">
              <widget class="QFrame" name="all_qs_frame">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="styleSheet">
-               <string notr="true">QFrame {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-}
-
-QLabel#show_result_label {
-    color: #2c3e50;
-    font-size: 24px;
-    font-weight: bold;
-}</string>
+               <string notr="true"/>
               </property>
               <property name="frameShape">
                <enum>QFrame::Shape::StyledPanel</enum>
@@ -1116,113 +1279,55 @@ QLabel#show_result_label {
                <enum>QFrame::Shadow::Raised</enum>
               </property>
               <layout class="QGridLayout" name="gridLayout_7">
-               <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignHCenter">
-                <widget class="QLabel" name="all_qs_label">
-                 <property name="font">
-                  <font>
-                   <pointsize>-1</pointsize>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="text">
-                  <string>All Questions</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
+               <item row="0" column="0">
                 <widget class="QTableView" name="all_qs_tableview">
                  <property name="styleSheet">
                   <string notr="true">QTableView {
+    border: 1px solid #e0e6ed;
+    gridline-color: #f3f4f6;
+    border-radius: 15px;
     background-color: white;
+    selection-background-color: #ebf5fb; 
+    selection-color: #2980b9;
     alternate-background-color: #f8f9fa; 
-    selection-background-color: #d1ecf1;
-    selection-color: #0c5460;
-    gridline-color: #dee2e6;
-    border: 1px solid #dee2e6;
+}
+
+QHeaderView::vertical {
+    width: 0px;
 }
 
 QHeaderView::section {
-    background-color: #f1f1f1;
-    padding: 6px;
-    border: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+    color: #34495e;
+    padding: 5px;
     font-weight: bold;
+    border: none;
+    border-bottom: 2px solid #3498db;
 }</string>
                  </property>
+                 <attribute name="horizontalHeaderCascadingSectionResizes">
+                  <bool>true</bool>
+                 </attribute>
+                 <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                  <bool>false</bool>
+                 </attribute>
+                 <attribute name="verticalHeaderCascadingSectionResizes">
+                  <bool>true</bool>
+                 </attribute>
                 </widget>
                </item>
               </layout>
              </widget>
             </item>
             <item row="2" column="0">
-             <widget class="QLabel" name="createquiz_ans_label">
-              <property name="font">
-               <font>
-                <pointsize>-1</pointsize>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Answer:</string>
-              </property>
-             </widget>
-            </item>
-            <item row="5" column="0">
-             <widget class="QLabel" name="createquiz_opt2_label">
-              <property name="font">
-               <font>
-                <pointsize>-1</pointsize>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Option 2:</string>
-              </property>
-             </widget>
-            </item>
-            <item row="7" column="2">
-             <widget class="QPushButton" name="show_all_qs_btn">
-              <property name="maximumSize">
-               <size>
-                <width>130</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>Show All Question</string>
-              </property>
-             </widget>
-            </item>
-            <item row="7" column="0">
-             <widget class="QPushButton" name="createquiz_add_qs_btn">
-              <property name="maximumSize">
-               <size>
-                <width>170</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Add Question</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="2">
-             <widget class="QLineEdit" name="createquiz_qs_lineedit"/>
-            </item>
-            <item row="9" column="0" colspan="3">
-             <spacer name="createquiz_verticalspacer">
+             <spacer name="verticalSpacer">
               <property name="orientation">
                <enum>Qt::Orientation::Vertical</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
                 <width>20</width>
-                <height>40</height>
+                <height>5</height>
                </size>
               </property>
              </spacer>
@@ -1261,6 +1366,15 @@ QHeaderView::section {
     font-weight: bold;
 }</string>
               </property>
+              <property name="sortingEnabled">
+               <bool>true</bool>
+              </property>
+              <attribute name="horizontalHeaderCascadingSectionResizes">
+               <bool>true</bool>
+              </attribute>
+              <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+               <bool>true</bool>
+              </attribute>
              </widget>
             </item>
             <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignHCenter">
