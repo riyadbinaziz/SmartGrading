@@ -193,7 +193,7 @@
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_2">
            <item>
-            <widget class="QLabel" name="menu_sidebar_btn_home">
+            <widget class="QLabel" name="menu_sidebar_label_home">
              <property name="font">
               <font>
                <pointsize>15</pointsize>
@@ -236,9 +236,9 @@
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="exit_sidebar_btn_home">
+            <widget class="QPushButton" name="logout_sidebar_btn_home">
              <property name="text">
-              <string>Exit</string>
+              <string>Log Out</string>
              </property>
             </widget>
            </item>

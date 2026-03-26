@@ -49,3 +49,7 @@ class AuthHandler:
             self.ui.homepage_stackwidget.setCurrentWidget(self.ui.attendquiz_stackwidget_page)
         else:
             QMessageBox.critical(None, "Login Failed", "Invalid username or password.")
+
+    def clear_fields(self):
+        self.ui.username_lineedit_login.clear()
+        self.ui.password_lineedit_login.clear()
