@@ -113,14 +113,14 @@ class Ui_Home(object):
         self.sidebar_frame_home.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_2 = QVBoxLayout(self.sidebar_frame_home)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.menu_sidebar_btn_home = QLabel(self.sidebar_frame_home)
-        self.menu_sidebar_btn_home.setObjectName(u"menu_sidebar_btn_home")
+        self.menu_sidebar_label_home = QLabel(self.sidebar_frame_home)
+        self.menu_sidebar_label_home.setObjectName(u"menu_sidebar_label_home")
         font2 = QFont()
         font2.setPointSize(15)
         font2.setBold(True)
-        self.menu_sidebar_btn_home.setFont(font2)
+        self.menu_sidebar_label_home.setFont(font2)
 
-        self.verticalLayout_2.addWidget(self.menu_sidebar_btn_home)
+        self.verticalLayout_2.addWidget(self.menu_sidebar_label_home)
 
         self.createquiz_sidebar_btn_home = QPushButton(self.sidebar_frame_home)
         self.createquiz_sidebar_btn_home.setObjectName(u"createquiz_sidebar_btn_home")
@@ -139,10 +139,10 @@ class Ui_Home(object):
 
         self.verticalLayout_2.addWidget(self.results_sidebar_btn_home)
 
-        self.exit_sidebar_btn_home = QPushButton(self.sidebar_frame_home)
-        self.exit_sidebar_btn_home.setObjectName(u"exit_sidebar_btn_home")
+        self.logout_sidebar_btn_home = QPushButton(self.sidebar_frame_home)
+        self.logout_sidebar_btn_home.setObjectName(u"logout_sidebar_btn_home")
 
-        self.verticalLayout_2.addWidget(self.exit_sidebar_btn_home)
+        self.verticalLayout_2.addWidget(self.logout_sidebar_btn_home)
 
         self.sidebar_verticalspacer = QSpacerItem(20, 369, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
@@ -283,6 +283,10 @@ class Ui_Home(object):
 
 
         self.verticalLayout_3.addWidget(self.show_result_frame)
+
+        self.attendquiz_verticalspacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_3.addItem(self.attendquiz_verticalspacer)
 
         self.homepage_stackwidget.addWidget(self.attendquiz_stackwidget_page)
         self.createquiz_stackwidget_page = QWidget()
@@ -435,7 +439,7 @@ class Ui_Home(object):
 
         self.mainStackWidget.setCurrentIndex(1)
         self.createquiz_sidebar_btn_home.setDefault(False)
-        self.homepage_stackwidget.setCurrentIndex(2)
+        self.homepage_stackwidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(Home)
@@ -449,11 +453,11 @@ class Ui_Home(object):
         self.welcome_label_login.setText(QCoreApplication.translate("Home", u"Welcome!", None))
         self.password_lineedit_login.setText("")
         self.signup_btn_login.setText(QCoreApplication.translate("Home", u"Sign Up", None))
-        self.menu_sidebar_btn_home.setText(QCoreApplication.translate("Home", u"Menu", None))
+        self.menu_sidebar_label_home.setText(QCoreApplication.translate("Home", u"Menu", None))
         self.createquiz_sidebar_btn_home.setText(QCoreApplication.translate("Home", u"Create Quiz", None))
         self.attendquiz_sidebar_btn_home.setText(QCoreApplication.translate("Home", u"Attend Quiz", None))
         self.results_sidebar_btn_home.setText(QCoreApplication.translate("Home", u"Results", None))
-        self.exit_sidebar_btn_home.setText(QCoreApplication.translate("Home", u"Exit", None))
+        self.logout_sidebar_btn_home.setText(QCoreApplication.translate("Home", u"Log Out", None))
         self.start_quiz_btn.setText(QCoreApplication.translate("Home", u"Start Quiz", None))
         self.select_qs_number_label.setText(QCoreApplication.translate("Home", u"Select Number of question :", None))
         self.quiz_qs_label.setText(QCoreApplication.translate("Home", u"Question", None))

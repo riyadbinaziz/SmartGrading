@@ -22,15 +22,18 @@ class AttendQuizHandler:
         self.ui.restart_quiz_btn.clicked.connect(self.prepare_initial_state)
 
     def prepare_initial_state(self):
-        """Shows only the selection frame and resets the spinbox range."""
+        """Resets the frames and sets the spinbox to 1."""
+        # Hide everything except the selection frame
         self.ui.select_qs_number_frame.show()
         self.ui.quiz_qs_frame.hide()
         self.ui.show_result_frame.hide()
-        
-        # Set spinbox limits based on database content
-        total_available = self.db.get_total_question_count()
-        self.ui.select_qs_number_spinbox.setMinimum(1)
-        self.ui.select_qs_number_spinbox.setMaximum(max(1, total_available))
+    
+        # Set spinbox to 1
+        self.ui.select_qs_number_spinbox.setValue(1)
+    
+        # Update max limit based on DB
+        count = self.db.get_question_count()
+        self.ui.select_qs_number_spinbox.setMaximum(count)
 
     def start_quiz_session(self):
         """Transitions to the quiz frame and loads random questions."""

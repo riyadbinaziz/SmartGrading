@@ -6,6 +6,7 @@ from auth import AuthHandler
 from create_quiz import CreateQuizHandler
 from result_page import ResultPageHandler
 from attend_quiz import AttendQuizHandler
+from logout import LogoutHandler
 
 class MyQuizApp(QMainWindow):
     def __init__(self):
@@ -26,6 +27,8 @@ class MyQuizApp(QMainWindow):
 
         self.result_logic = ResultPageHandler(self.ui, self.db, self)
 
+        self.logout_logic = LogoutHandler(self.ui, self, self.auth, self.attend_quiz_logic)
+
         # --- Sidebar Navigation Logic ---
 
         # 1. Attend Quiz (Resets and switches)
@@ -40,7 +43,7 @@ class MyQuizApp(QMainWindow):
         self.ui.results_sidebar_btn_home.clicked.connect(self.navigate_to_results)
 
         # 4. Log Out (Returns to login and clears user session)
-        self.ui.logout_sidebar_btn_home.clicked.connect(self.handle_logout)
+        self.ui.logout_sidebar_btn_home.clicked.connect(self.logout_logic.handle_logout)
 
         # Ensure we start on the login page
         self.ui.mainStackWidget.setCurrentWidget(self.ui.login_page)
@@ -53,11 +56,11 @@ class MyQuizApp(QMainWindow):
         self.result_logic.load_user_results()
 
     def navigate_to_attend_quiz(self):
-    """Resets the quiz UI to the selection frame and switches page."""
-    # Switch the inner stack to Attend Quiz page
-    self.ui.homepage_stackwidget.setCurrentWidget(self.ui.attendquiz_stackwidget_page)
-    # Call the reset function from your attend quiz handler
-    self.attend_quiz_logic.prepare_initial_state()
+        """Resets the quiz UI to the selection frame and switches page."""
+        # Switch the inner stack to Attend Quiz page
+        self.ui.homepage_stackwidget.setCurrentWidget(self.ui.attendquiz_stackwidget_page)
+        # Call the reset function from your attend quiz handler
+        self.attend_quiz_logic.prepare_initial_state()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
