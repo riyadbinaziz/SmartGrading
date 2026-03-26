@@ -6,14 +6,29 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>657</width>
-    <height>551</height>
+    <width>642</width>
+    <height>737</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>SmartGrading</string>
   </property>
   <widget class="QWidget" name="homeWidget">
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+    background-color: #ffffff;
+    border: 1px solid #dcdde1;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 13px;
+    color: #2f3640;
+}
+
+QLineEdit:focus {
+    border: 2px solid #3498db; 
+    background-color: #f5faff;
+}</string>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="spacing">
      <number>0</number>
@@ -36,121 +51,303 @@
        <number>1</number>
       </property>
       <widget class="QWidget" name="login_page">
+       <property name="styleSheet">
+        <string notr="true">#login_page {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, 
+                stop:0 #6a11cb, stop:1 #2575fc);
+}
+#login_card_frame {
+    background-color: rgba(255, 255, 255, 0.95); 
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+QLineEdit {
+    background-color: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 14px;
+    color: #495057;
+    margin-bottom: 5px;
+}
+
+QLineEdit:focus {
+    border: 2px solid #3498db;
+    background-color: #ffffff;
+}
+
+QLabel#username_label_login, QLabel#password_label_login {
+    color: #576574; 
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+#welcome_label_login {
+    color: #2c3e50; 
+    font-family: &quot;Segoe UI Semibold&quot;, &quot;Trebuchet MS&quot;;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding-bottom: 15px; 
+    border-bottom: 2px solid #3498db; 
+}
+
+#subtitle_label_login {
+    color: #95a5a6;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+QPushButton#login_btn_login {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 12px;
+    padding: 12px;
+    min-width: 120px;
+}
+
+QPushButton#login_btn_login:hover {
+    background-color: #2980b9;
+}
+
+QPushButton#login_btn_login:pressed {
+    background-color: #1d6fa5; 
+    padding-top: 12px; 
+    padding-left: 14px;
+}
+
+QPushButton#signup_btn_login {
+    background-color: transparent;
+    color: #3498db;
+    font-weight: bold;
+    border: 2px solid #3498db;
+    border-radius: 12px;
+    padding: 10px;
+    min-width: 120px;
+}
+
+QPushButton#signup_btn_login:hover {
+    background-color: #f0f7ff;
+} 
+
+QPushButton#signup_btn_login:pressed {
+    background-color: #d6eaf8; 
+    border: 2px solid #2980b9;
+}</string>
+       </property>
        <layout class="QGridLayout" name="gridLayout">
-        <item row="4" column="1">
-         <widget class="QLabel" name="password_label_login">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <bold>true</bold>
-           </font>
+        <item row="1" column="1">
+         <widget class="QFrame" name="login_card_frame">
+          <property name="minimumSize">
+           <size>
+            <width>400</width>
+            <height>0</height>
+           </size>
           </property>
-          <property name="text">
-           <string>Password:</string>
+          <property name="maximumSize">
+           <size>
+            <width>450</width>
+            <height>16777215</height>
+           </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Shape::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Shadow::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_8">
+           <item row="6" column="1">
+            <widget class="QPushButton" name="signup_btn_login">
+             <property name="text">
+              <string>Sign Up</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0" rowspan="2" colspan="4">
+            <widget class="QFrame" name="username_login_frame">
+             <property name="frameShape">
+              <enum>QFrame::Shape::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Shadow::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <item>
+               <widget class="QLabel" name="username_label_login">
+                <property name="font">
+                 <font>
+                  <pointsize>-1</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Username:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="username_lineedit_login"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="6" column="2">
+            <widget class="QPushButton" name="login_btn_login">
+             <property name="text">
+              <string>Login</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="3">
+            <spacer name="login_horizontalspacer">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="5" column="0" colspan="4">
+            <widget class="QFrame" name="password_login_frame">
+             <property name="frameShape">
+              <enum>QFrame::Shape::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Shadow::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <item>
+               <widget class="QLabel" name="password_label_login">
+                <property name="font">
+                 <font>
+                  <pointsize>-1</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Password:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="password_lineedit_login">
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <spacer name="signup_horizontalspacer">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="0" column="1" colspan="2" alignment="Qt::AlignmentFlag::AlignHCenter">
+            <widget class="QLabel" name="welcome_label_login">
+             <property name="font">
+              <font>
+               <family>Segoe UI</family>
+               <pointsize>-1</pointsize>
+               <fontweight>ExtraBold</fontweight>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">#welcome_label_login {
+    color: #2c3e50;
+    font-size: 28px;
+    font-weight: 800;
+    font-family: 'Segoe UI', sans-serif;
+}</string>
+             </property>
+             <property name="text">
+              <string>Welcome to SmartGrading!</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="4" alignment="Qt::AlignmentFlag::AlignHCenter">
+            <widget class="QLabel" name="subtitle_label_login">
+             <property name="text">
+              <string>Please Login or Sign Up to continue.</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </item>
-        <item row="3" column="1">
-         <widget class="QLabel" name="username_label_login">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Username:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="5">
-         <spacer name="horizontalspacer_login_above">
+        <item row="1" column="0">
+         <spacer name="loginframe_left_horizontalspacer">
           <property name="orientation">
            <enum>Qt::Orientation::Horizontal</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>158</width>
+            <width>40</width>
             <height>20</height>
            </size>
           </property>
          </spacer>
         </item>
-        <item row="5" column="3" colspan="2">
-         <widget class="QPushButton" name="login_btn_login">
-          <property name="text">
-           <string>Login</string>
+        <item row="1" column="2">
+         <spacer name="loginframe_right_horizontalspacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
           </property>
-         </widget>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
         </item>
-        <item row="3" column="2" colspan="3">
-         <widget class="QLineEdit" name="username_lineedit_login"/>
-        </item>
-        <item row="6" column="3">
-         <spacer name="verticalapacer_login_below">
+        <item row="0" column="0" colspan="3">
+         <spacer name="loginframe_above_verticalspacer">
           <property name="orientation">
            <enum>Qt::Orientation::Vertical</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
             <width>20</width>
-            <height>230</height>
+            <height>40</height>
            </size>
           </property>
          </spacer>
         </item>
-        <item row="4" column="0">
-         <spacer name="horizontalspacer_login_below">
-          <property name="orientation">
-           <enum>Qt::Orientation::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>158</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="2" column="2" colspan="2">
-         <widget class="QLabel" name="welcome_label_login">
-          <property name="font">
-           <font>
-            <pointsize>20</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Welcome!</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="2" colspan="3">
-         <widget class="QLineEdit" name="password_lineedit_login">
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="3">
-         <spacer name="verticalspacer_login_above">
+        <item row="2" column="0" colspan="3">
+         <spacer name="loginframe_below_verticalspacer">
           <property name="orientation">
            <enum>Qt::Orientation::Vertical</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
             <width>20</width>
-            <height>213</height>
+            <height>40</height>
            </size>
           </property>
          </spacer>
-        </item>
-        <item row="5" column="1" colspan="2">
-         <widget class="QPushButton" name="signup_btn_login">
-          <property name="text">
-           <string>Sign Up</string>
-          </property>
-         </widget>
         </item>
        </layout>
       </widget>
@@ -185,6 +382,50 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">#sidebar_frame_home {
+    background-color: #2c3e50;
+    border: none;
+}
+
+#menu_sidebar_label_home {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: &quot;Segoe UI&quot;, sans-serif;
+    padding: 20px 10px 10px 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#sidebar_frame_home QPushButton {
+    color: #bdc3c7; 
+    background-color: transparent;
+    border: none;
+    border-radius: 0px;
+    text-align: left;
+    padding: 15px 25px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: &quot;Segoe UI&quot;, sans-serif;
+}
+
+#sidebar_frame_home QPushButton:hover {
+    color: #ffffff;
+    background-color: #34495e; 
+    border-left: 4px solid #3498db; 
+}
+
+QPushButton#logout_sidebar_btn_home:hover {
+    background-color: #e74c3c; 
+    color: white;
+}
+
+#sidebar_frame_home QPushButton:pressed {
+    background-color: #1abc9c;
+    color: white;
+}</string>
+          </property>
           <property name="frameShape">
            <enum>QFrame::Shape::StyledPanel</enum>
           </property>
@@ -192,11 +433,24 @@
            <enum>QFrame::Shadow::Raised</enum>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_2">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
            <item>
             <widget class="QLabel" name="menu_sidebar_label_home">
              <property name="font">
               <font>
-               <pointsize>15</pointsize>
+               <family>Segoe UI</family>
+               <pointsize>-1</pointsize>
                <bold>true</bold>
               </font>
              </property>
@@ -207,6 +461,9 @@
            </item>
            <item>
             <widget class="QPushButton" name="createquiz_sidebar_btn_home">
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
              <property name="text">
               <string>Create Quiz</string>
              </property>
@@ -223,6 +480,9 @@
            </item>
            <item>
             <widget class="QPushButton" name="attendquiz_sidebar_btn_home">
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
              <property name="text">
               <string>Attend Quiz</string>
              </property>
@@ -230,6 +490,9 @@
            </item>
            <item>
             <widget class="QPushButton" name="results_sidebar_btn_home">
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
              <property name="text">
               <string>Results</string>
              </property>
@@ -237,6 +500,9 @@
            </item>
            <item>
             <widget class="QPushButton" name="logout_sidebar_btn_home">
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
              <property name="text">
               <string>Log Out</string>
              </property>
@@ -261,7 +527,7 @@
         <item>
          <widget class="QStackedWidget" name="homepage_stackwidget">
           <property name="currentIndex">
-           <number>0</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="attendquiz_stackwidget_page">
            <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -272,6 +538,52 @@
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QFrame#select_qs_number_frame {
+    background-color: #ffffff;
+    border-radius: 15px;
+    border: 1px solid #e0e6ed;
+}
+
+QLabel#select_qs_number_label {
+    color: #34495e;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: &quot;Segoe UI&quot;, sans-serif;
+}
+
+QSpinBox#select_qs_number_spinbox {
+    background-color: #f8f9fa;
+    border: 2px solid #dcdde1;
+    border-radius: 8px;
+    padding: 2px;
+    min-width: 60px;
+    font-size: 14px;
+}
+
+QSpinBox#select_qs_number_spinbox:focus {
+    border: 2px solid #2ecc71; 
+}
+
+QPushButton#start_quiz_btn {
+    background-color: #2ecc71; 
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+}
+
+QPushButton#start_quiz_btn:hover {
+    background-color: #27ae60;
+}
+
+QPushButton#start_quiz_btn:pressed {
+    background-color: #1e8449;
+    padding-top: 12px; 
+}</string>
               </property>
               <property name="frameShape">
                <enum>QFrame::Shape::StyledPanel</enum>
@@ -303,7 +615,7 @@
                  </property>
                  <property name="font">
                   <font>
-                   <pointsize>10</pointsize>
+                   <pointsize>-1</pointsize>
                   </font>
                  </property>
                 </widget>
@@ -312,8 +624,12 @@
                 <widget class="QPushButton" name="start_quiz_btn">
                  <property name="font">
                   <font>
-                   <pointsize>10</pointsize>
+                   <pointsize>-1</pointsize>
+                   <bold>true</bold>
                   </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
                  </property>
                  <property name="text">
                   <string>Start Quiz</string>
@@ -330,8 +646,9 @@
                  </property>
                  <property name="font">
                   <font>
-                   <pointsize>11</pointsize>
-                   <bold>false</bold>
+                   <family>Segoe UI</family>
+                   <pointsize>-1</pointsize>
+                   <bold>true</bold>
                   </font>
                  </property>
                  <property name="text">
@@ -350,6 +667,48 @@
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
+              <property name="styleSheet">
+               <string notr="true">#quiz_qs_frame {
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #e0e6ed;
+    padding: 20px;
+}
+
+#quiz_qs_label {
+    color: #2c3e50;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+QRadioButton {
+    color: #4b5563;
+    font-size: 14px;
+    padding: 12px;
+    background-color: #f9fafb;
+    border: 2px solid #f3f4f6;
+    border-radius: 10px;
+    spacing: 10px;
+}
+
+QRadioButton:hover {
+    background-color: #f0f7ff;
+    border: 2px solid #3498db;
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+}
+
+QRadioButton:checked {
+    background-color: #ebf5fb;
+    border: 2px solid #3498db;
+    color: #2980b9;
+    font-weight: bold;
+}</string>
+              </property>
               <property name="frameShape">
                <enum>QFrame::Shape::StyledPanel</enum>
               </property>
@@ -357,11 +716,15 @@
                <enum>QFrame::Shadow::Raised</enum>
               </property>
               <layout class="QGridLayout" name="gridLayout_4">
-               <item row="0" column="0">
+               <property name="spacing">
+                <number>15</number>
+               </property>
+               <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignLeft">
                 <widget class="QLabel" name="quiz_qs_label">
                  <property name="font">
                   <font>
-                   <pointsize>10</pointsize>
+                   <pointsize>-1</pointsize>
+                   <bold>true</bold>
                   </font>
                  </property>
                  <property name="text">
@@ -373,7 +736,7 @@
                 <widget class="QRadioButton" name="qs_opt0_radio">
                  <property name="font">
                   <font>
-                   <pointsize>10</pointsize>
+                   <pointsize>-1</pointsize>
                   </font>
                  </property>
                  <property name="text">
@@ -388,7 +751,7 @@
                 <widget class="QRadioButton" name="qs_opt1_radio">
                  <property name="font">
                   <font>
-                   <pointsize>10</pointsize>
+                   <pointsize>-1</pointsize>
                   </font>
                  </property>
                  <property name="text">
@@ -403,7 +766,7 @@
                 <widget class="QRadioButton" name="qs_opt2_radio">
                  <property name="font">
                   <font>
-                   <pointsize>10</pointsize>
+                   <pointsize>-1</pointsize>
                   </font>
                  </property>
                  <property name="text">
@@ -418,7 +781,7 @@
                 <widget class="QRadioButton" name="qs_opt3_radio">
                  <property name="font">
                   <font>
-                   <pointsize>10</pointsize>
+                   <pointsize>-1</pointsize>
                   </font>
                  </property>
                  <property name="text">
@@ -429,12 +792,33 @@
                  </attribute>
                 </widget>
                </item>
-               <item row="5" column="0" alignment="Qt::AlignmentFlag::AlignLeft">
+               <item row="5" column="0" alignment="Qt::AlignmentFlag::AlignRight">
                 <widget class="QPushButton" name="next_qs_btn">
                  <property name="font">
                   <font>
-                   <pointsize>10</pointsize>
+                   <pointsize>-1</pointsize>
+                   <bold>true</bold>
                   </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton#next_qs_btn {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 10px;
+    padding: 10px 30px;
+    min-width: 100px;
+}
+
+QPushButton#next_qs_btn:hover {
+    background-color: #2980b9;
+}
+
+QPushButton#next_qs_btn:pressed {
+    background-color: #1c5980;
+    padding-top: 12px;
+}</string>
                  </property>
                  <property name="text">
                   <string>Next</string>
@@ -452,6 +836,41 @@
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
+              <property name="styleSheet">
+               <string notr="true">#show_result_frame {
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 2px solid #2ecc71; 
+    padding: 30px;
+}
+
+#show_result_label {
+    color: #2c3e50;
+    font-size: 26px;
+    font-weight: 900;
+    font-family: &quot;Segoe UI&quot;, sans-serif;
+    margin-bottom: 20px;
+}
+
+#restart_quiz_btn {
+    background-color: #f39c12;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 10px;
+    padding: 12px 25px;
+    text-transform: uppercase;
+}
+
+#restart_quiz_btn:hover {
+    background-color: #e67e22;
+}
+
+#restart_quiz_btn:pressed {
+    background-color: #d35400;
+    padding-top: 14px;
+}</string>
+              </property>
               <property name="frameShape">
                <enum>QFrame::Shape::StyledPanel</enum>
               </property>
@@ -459,6 +878,9 @@
                <enum>QFrame::Shadow::Raised</enum>
               </property>
               <layout class="QGridLayout" name="gridLayout_6">
+               <property name="spacing">
+                <number>20</number>
+               </property>
                <item row="3" column="0" alignment="Qt::AlignmentFlag::AlignLeft">
                 <widget class="QPushButton" name="restart_quiz_btn">
                  <property name="maximumSize">
@@ -469,7 +891,8 @@
                  </property>
                  <property name="font">
                   <font>
-                   <pointsize>10</pointsize>
+                   <pointsize>-1</pointsize>
+                   <bold>true</bold>
                   </font>
                  </property>
                  <property name="text">
@@ -481,12 +904,16 @@
                 <widget class="QLabel" name="show_result_label">
                  <property name="font">
                   <font>
-                   <pointsize>13</pointsize>
-                   <bold>true</bold>
+                   <family>Segoe UI</family>
+                   <pointsize>-1</pointsize>
+                   <fontweight>Black</fontweight>
                   </font>
                  </property>
                  <property name="text">
                   <string>You got x marks!</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
                  </property>
                 </widget>
                </item>
@@ -522,13 +949,77 @@
            </layout>
           </widget>
           <widget class="QWidget" name="createquiz_stackwidget_page">
+           <property name="styleSheet">
+            <string notr="true">#createquiz_stackwidget_page {
+    background-color: transparent; 
+}
+
+#all_qs_frame {
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid #e0e6ed;
+}
+
+QLabel {
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 2px;
+}
+
+#add_new_qs_label {
+    color: #1a2a6c;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+QLineEdit {
+    background-color: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 13px;
+    color: #2c3e50;
+}
+
+QLineEdit:focus {
+    border: 2px solid #3498db;
+    background-color: white;
+}
+
+QPushButton {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 12px;
+    min-width: 140px;
+}
+
+QPushButton:hover {
+    background-color: #2980b9;
+}
+
+#show_all_qs_btn {
+    background-color: transparent;
+    color: #3498db;
+    border: 2px solid #3498db;
+}
+
+#show_all_qs_btn:hover {
+    background-color: #f0f7ff;
+}</string>
+           </property>
            <layout class="QGridLayout" name="gridLayout_3">
             <item row="3" column="0">
              <widget class="QLabel" name="createquiz_other_option_label">
               <property name="font">
                <font>
-                <pointsize>10</pointsize>
-                <bold>false</bold>
+                <pointsize>-1</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -549,7 +1040,8 @@
              <widget class="QLabel" name="createquiz_opt1_label">
               <property name="font">
                <font>
-                <pointsize>10</pointsize>
+                <pointsize>-1</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -561,7 +1053,8 @@
              <widget class="QLabel" name="createquiz_qs_label">
               <property name="font">
                <font>
-                <pointsize>10</pointsize>
+                <pointsize>-1</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -573,7 +1066,8 @@
              <widget class="QLabel" name="createquiz_opt3_label">
               <property name="font">
                <font>
-                <pointsize>10</pointsize>
+                <pointsize>-1</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -588,7 +1082,7 @@
              <widget class="QLabel" name="add_new_qs_label">
               <property name="font">
                <font>
-                <pointsize>13</pointsize>
+                <pointsize>-1</pointsize>
                 <bold>true</bold>
                </font>
               </property>
@@ -602,6 +1096,19 @@
             </item>
             <item row="8" column="0" colspan="3">
              <widget class="QFrame" name="all_qs_frame">
+              <property name="styleSheet">
+               <string notr="true">QFrame {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+}
+
+QLabel#show_result_label {
+    color: #2c3e50;
+    font-size: 24px;
+    font-weight: bold;
+}</string>
+              </property>
               <property name="frameShape">
                <enum>QFrame::Shape::StyledPanel</enum>
               </property>
@@ -613,7 +1120,7 @@
                 <widget class="QLabel" name="all_qs_label">
                  <property name="font">
                   <font>
-                   <pointsize>11</pointsize>
+                   <pointsize>-1</pointsize>
                    <bold>true</bold>
                   </font>
                  </property>
@@ -623,7 +1130,25 @@
                 </widget>
                </item>
                <item row="1" column="0">
-                <widget class="QTableView" name="all_qs_tableview"/>
+                <widget class="QTableView" name="all_qs_tableview">
+                 <property name="styleSheet">
+                  <string notr="true">QTableView {
+    background-color: white;
+    alternate-background-color: #f8f9fa; 
+    selection-background-color: #d1ecf1;
+    selection-color: #0c5460;
+    gridline-color: #dee2e6;
+    border: 1px solid #dee2e6;
+}
+
+QHeaderView::section {
+    background-color: #f1f1f1;
+    padding: 6px;
+    border: 1px solid #dee2e6;
+    font-weight: bold;
+}</string>
+                 </property>
+                </widget>
                </item>
               </layout>
              </widget>
@@ -632,7 +1157,8 @@
              <widget class="QLabel" name="createquiz_ans_label">
               <property name="font">
                <font>
-                <pointsize>10</pointsize>
+                <pointsize>-1</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -644,7 +1170,8 @@
              <widget class="QLabel" name="createquiz_opt2_label">
               <property name="font">
                <font>
-                <pointsize>10</pointsize>
+                <pointsize>-1</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -676,6 +1203,7 @@
               <property name="font">
                <font>
                 <pointsize>10</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -702,16 +1230,45 @@
            </layout>
           </widget>
           <widget class="QWidget" name="results_stackwidget_page">
+           <property name="styleSheet">
+            <string notr="true">#result_summary_label {
+    color: #1a2a6c;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+
+</string>
+           </property>
            <layout class="QGridLayout" name="gridLayout_2">
             <item row="1" column="0">
-             <widget class="QTableView" name="result_tableview"/>
+             <widget class="QTableView" name="result_tableview">
+              <property name="styleSheet">
+               <string notr="true">QTableView {
+    background-color: white;
+    alternate-background-color: #f8f9fa; 
+    selection-background-color: #d1ecf1;
+    selection-color: #0c5460;
+    gridline-color: #dee2e6;
+    border: 1px solid #dee2e6;
+}
+
+QHeaderView::section {
+    background-color: #f1f1f1;
+    padding: 6px;
+    border: 1px solid #dee2e6;
+    font-weight: bold;
+}</string>
+              </property>
+             </widget>
             </item>
             <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignHCenter">
              <widget class="QLabel" name="result_summary_label">
               <property name="font">
                <font>
                 <family>Arial</family>
-                <pointsize>14</pointsize>
+                <pointsize>-1</pointsize>
                 <bold>true</bold>
                 <underline>true</underline>
                </font>
