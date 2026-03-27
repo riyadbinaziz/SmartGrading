@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>642</width>
-    <height>737</height>
+    <width>616</width>
+    <height>582</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -36,7 +36,7 @@
     <item>
      <widget class="QStackedWidget" name="mainStackWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="login_page">
        <property name="styleSheet">
@@ -54,7 +54,7 @@ QLineEdit {
     background-color: #f8f9fa;
     border: 2px solid #e9ecef;
     border-radius: 12px;
-    padding: 12px;
+    padding: 10px;
     font-size: 14px;
     color: #495057;
     margin-bottom: 5px;
@@ -79,14 +79,14 @@ QLabel#username_label_login, QLabel#password_label_login {
     font-size: 28px;
     font-weight: 700;
     letter-spacing: 0.5px;
-    padding-bottom: 15px; 
+    padding-bottom: 5px; 
     border-bottom: 2px solid #3498db; 
 }
 
 #subtitle_label_login {
     color: #95a5a6;
     font-size: 13px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 QPushButton#login_btn_login {
@@ -95,7 +95,7 @@ QPushButton#login_btn_login {
     font-weight: bold;
     font-size: 15px;
     border-radius: 12px;
-    padding: 12px;
+    padding: 10px;
     min-width: 120px;
 }
 
@@ -133,7 +133,7 @@ QPushButton#signup_btn_login:pressed {
          <widget class="QFrame" name="login_card_frame">
           <property name="minimumSize">
            <size>
-            <width>400</width>
+            <width>350</width>
             <height>0</height>
            </size>
           </property>
@@ -292,7 +292,7 @@ QPushButton#signup_btn_login:pressed {
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>40</width>
+            <width>0</width>
             <height>20</height>
            </size>
           </property>
@@ -305,7 +305,7 @@ QPushButton#signup_btn_login:pressed {
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>40</width>
+            <width>0</width>
             <height>20</height>
            </size>
           </property>
@@ -316,10 +316,13 @@ QPushButton#signup_btn_login:pressed {
           <property name="orientation">
            <enum>Qt::Orientation::Vertical</enum>
           </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Expanding</enum>
+          </property>
           <property name="sizeHint" stdset="0">
            <size>
             <width>20</width>
-            <height>40</height>
+            <height>0</height>
            </size>
           </property>
          </spacer>
@@ -332,7 +335,7 @@ QPushButton#signup_btn_login:pressed {
           <property name="sizeHint" stdset="0">
            <size>
             <width>20</width>
-            <height>40</height>
+            <height>0</height>
            </size>
           </property>
          </spacer>
@@ -360,7 +363,7 @@ QPushButton#signup_btn_login:pressed {
          <widget class="QFrame" name="sidebar_frame_home">
           <property name="minimumSize">
            <size>
-            <width>170</width>
+            <width>150</width>
             <height>0</height>
            </size>
           </property>
@@ -515,7 +518,7 @@ QPushButton#logout_sidebar_btn_home:hover {
         <item>
          <widget class="QStackedWidget" name="homepage_stackwidget">
           <property name="currentIndex">
-           <number>1</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="attendquiz_stackwidget_page">
            <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -539,6 +542,7 @@ QLabel#select_qs_number_label {
     font-size: 18px;
     font-weight: bold;
     font-family: &quot;Segoe UI&quot;, sans-serif;
+    margin-bottom: 5px;
 }
 
 QSpinBox#select_qs_number_spinbox {
@@ -560,7 +564,7 @@ QPushButton#start_quiz_btn {
     font-weight: bold;
     font-size: 15px;
     border-radius: 10px;
-    padding: 10px 20px;
+    padding: 5px 20px;
     text-transform: uppercase;
 }
 
@@ -587,7 +591,7 @@ QPushButton#start_quiz_btn:pressed {
                  </property>
                  <property name="sizeHint" stdset="0">
                   <size>
-                   <width>40</width>
+                   <width>0</width>
                    <height>20</height>
                   </size>
                  </property>
@@ -595,6 +599,12 @@ QPushButton#start_quiz_btn:pressed {
                </item>
                <item row="0" column="1">
                 <widget class="QSpinBox" name="select_qs_number_spinbox">
+                 <property name="minimumSize">
+                  <size>
+                   <width>50</width>
+                   <height>0</height>
+                  </size>
+                 </property>
                  <property name="maximumSize">
                   <size>
                    <width>50</width>
@@ -660,24 +670,24 @@ QPushButton#start_quiz_btn:pressed {
     background-color: #ffffff;
     border-radius: 20px;
     border: 1px solid #e0e6ed;
-    padding: 20px;
+    padding: 10px;
 }
 
 #quiz_qs_label {
     color: #2c3e50;
     font-size: 18px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 QRadioButton {
     color: #4b5563;
     font-size: 14px;
-    padding: 12px;
+    padding: 5px;
     background-color: #f9fafb;
     border: 2px solid #f3f4f6;
     border-radius: 10px;
-    spacing: 10px;
+    spacing: 5px;
 }
 
 QRadioButton:hover {
@@ -782,6 +792,12 @@ QRadioButton:checked {
                </item>
                <item row="5" column="0" alignment="Qt::AlignmentFlag::AlignRight">
                 <widget class="QPushButton" name="next_qs_btn">
+                 <property name="minimumSize">
+                  <size>
+                   <width>100</width>
+                   <height>0</height>
+                  </size>
+                 </property>
                  <property name="font">
                   <font>
                    <pointsize>-1</pointsize>
@@ -829,7 +845,7 @@ QPushButton#next_qs_btn:pressed {
     background-color: #ffffff;
     border-radius: 20px;
     border: 2px solid #2ecc71; 
-    padding: 30px;
+    padding: 10px;
 }
 
 #show_result_label {
@@ -837,7 +853,7 @@ QPushButton#next_qs_btn:pressed {
     font-size: 26px;
     font-weight: 900;
     font-family: &quot;Segoe UI&quot;, sans-serif;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 #restart_quiz_btn {
@@ -846,7 +862,7 @@ QPushButton#next_qs_btn:pressed {
     font-weight: bold;
     font-size: 14px;
     border-radius: 10px;
-    padding: 12px 25px;
+    padding: 10px 25px;
     text-transform: uppercase;
 }
 
@@ -912,7 +928,7 @@ QPushButton#next_qs_btn:pressed {
                  </property>
                  <property name="sizeHint" stdset="0">
                   <size>
-                   <width>40</width>
+                   <width>0</width>
                    <height>20</height>
                   </size>
                  </property>
@@ -929,7 +945,7 @@ QPushButton#next_qs_btn:pressed {
               <property name="sizeHint" stdset="0">
                <size>
                 <width>20</width>
-                <height>40</height>
+                <height>0</height>
                </size>
               </property>
              </spacer>
@@ -1105,19 +1121,6 @@ QPushButton:hover {
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="createquiz_other_option_label">
-                 <property name="font">
-                  <font>
-                   <pointsize>-1</pointsize>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="text">
-                  <string>Other Options:</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
                 <widget class="QFrame" name="opt1_frame">
                  <property name="frameShape">
                   <enum>QFrame::Shape::StyledPanel</enum>
@@ -1212,6 +1215,12 @@ QPushButton:hover {
                  <layout class="QGridLayout" name="gridLayout_9">
                   <item row="0" column="1">
                    <widget class="QPushButton" name="createquiz_add_qs_btn">
+                    <property name="minimumSize">
+                     <size>
+                      <width>124</width>
+                      <height>0</height>
+                     </size>
+                    </property>
                     <property name="maximumSize">
                      <size>
                       <width>170</width>
@@ -1249,7 +1258,7 @@ QPushButton:hover {
                     </property>
                     <property name="sizeHint" stdset="0">
                      <size>
-                      <width>40</width>
+                      <width>0</width>
                       <height>20</height>
                      </size>
                     </property>
@@ -1327,7 +1336,7 @@ QHeaderView::section {
               <property name="sizeHint" stdset="0">
                <size>
                 <width>20</width>
-                <height>5</height>
+                <height>0</height>
                </size>
               </property>
              </spacer>

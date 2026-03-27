@@ -25,7 +25,7 @@ class Ui_Home(object):
     def setupUi(self, Home):
         if not Home.objectName():
             Home.setObjectName(u"Home")
-        Home.resize(642, 737)
+        Home.resize(616, 582)
         self.homeWidget = QWidget(Home)
         self.homeWidget.setObjectName(u"homeWidget")
         self.homeWidget.setStyleSheet(u"")
@@ -51,7 +51,7 @@ class Ui_Home(object):
 "    background-color: #f8f9fa;\n"
 "    border: 2px solid #e9ecef;\n"
 "    border-radius: 12px;\n"
-"    padding: 12px;\n"
+"    padding: 10px;\n"
 "    font-size: 14px;\n"
 "    color: #495057;\n"
 "    margin-bottom: 5px;\n"
@@ -77,14 +77,14 @@ class Ui_Home(object):
 "    font-weight: 700;\n"
 "    lette"
                         "r-spacing: 0.5px;\n"
-"    padding-bottom: 15px; \n"
+"    padding-bottom: 5px; \n"
 "    border-bottom: 2px solid #3498db; \n"
 "}\n"
 "\n"
 "#subtitle_label_login {\n"
 "    color: #95a5a6;\n"
 "    font-size: 13px;\n"
-"    margin-bottom: 20px;\n"
+"    margin-bottom: 10px;\n"
 "}\n"
 "\n"
 "QPushButton#login_btn_login {\n"
@@ -93,7 +93,7 @@ class Ui_Home(object):
 "    font-weight: bold;\n"
 "    font-size: 15px;\n"
 "    border-radius: 12px;\n"
-"    padding: 12px;\n"
+"    padding: 10px;\n"
 "    min-width: 120px;\n"
 "}\n"
 "\n"
@@ -121,8 +121,8 @@ class Ui_Home(object):
 "    background-color: #f0f7ff;\n"
 "} \n"
 "\n"
-"Q"
-                        "PushButton#signup_btn_login:pressed {\n"
+"QP"
+                        "ushButton#signup_btn_login:pressed {\n"
 "    background-color: #d6eaf8; \n"
 "    border: 2px solid #2980b9;\n"
 "}")
@@ -130,7 +130,7 @@ class Ui_Home(object):
         self.gridLayout.setObjectName(u"gridLayout")
         self.login_card_frame = QFrame(self.login_page)
         self.login_card_frame.setObjectName(u"login_card_frame")
-        self.login_card_frame.setMinimumSize(QSize(400, 0))
+        self.login_card_frame.setMinimumSize(QSize(350, 0))
         self.login_card_frame.setMaximumSize(QSize(450, 16777215))
         self.login_card_frame.setStyleSheet(u"")
         self.login_card_frame.setFrameShape(QFrame.Shape.StyledPanel)
@@ -220,19 +220,19 @@ class Ui_Home(object):
 
         self.gridLayout.addWidget(self.login_card_frame, 1, 1, 1, 1)
 
-        self.loginframe_left_horizontalspacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.loginframe_left_horizontalspacer = QSpacerItem(0, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.gridLayout.addItem(self.loginframe_left_horizontalspacer, 1, 0, 1, 1)
 
-        self.loginframe_right_horizontalspacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.loginframe_right_horizontalspacer = QSpacerItem(0, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.gridLayout.addItem(self.loginframe_right_horizontalspacer, 1, 2, 1, 1)
 
-        self.loginframe_above_verticalspacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.loginframe_above_verticalspacer = QSpacerItem(20, 0, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.gridLayout.addItem(self.loginframe_above_verticalspacer, 0, 0, 1, 3)
 
-        self.loginframe_below_verticalspacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.loginframe_below_verticalspacer = QSpacerItem(20, 0, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.gridLayout.addItem(self.loginframe_below_verticalspacer, 2, 0, 1, 3)
 
@@ -245,7 +245,7 @@ class Ui_Home(object):
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.sidebar_frame_home = QFrame(self.home_page)
         self.sidebar_frame_home.setObjectName(u"sidebar_frame_home")
-        self.sidebar_frame_home.setMinimumSize(QSize(170, 0))
+        self.sidebar_frame_home.setMinimumSize(QSize(150, 0))
         self.sidebar_frame_home.setMaximumSize(QSize(300, 16777215))
         self.sidebar_frame_home.setStyleSheet(u"#sidebar_frame_home {\n"
 "    background-color: #2c3e50;\n"
@@ -361,6 +361,7 @@ class Ui_Home(object):
 "    font-size: 18px;\n"
 "    font-weight: bold;\n"
 "    font-family: \"Segoe UI\", sans-serif;\n"
+"    margin-bottom: 5px;\n"
 "}\n"
 "\n"
 "QSpinBox#select_qs_number_spinbox {\n"
@@ -382,7 +383,7 @@ class Ui_Home(object):
 "    font-weight: bold;\n"
 "    font-size: 15px;\n"
 "    border-radius: 10px;\n"
-"    padding: 10px 20px;\n"
+"    padding: 5px 20px;\n"
 "    text-transform: uppercase;\n"
 "}\n"
 "\n"
@@ -391,20 +392,21 @@ class Ui_Home(object):
 "}\n"
 "\n"
 "QPushButton#start_quiz_btn:pressed {\n"
-"    background-color: #"
-                        "1e8449;\n"
+""
+                        "    background-color: #1e8449;\n"
 "    padding-top: 12px; \n"
 "}")
         self.select_qs_number_frame.setFrameShape(QFrame.Shape.StyledPanel)
         self.select_qs_number_frame.setFrameShadow(QFrame.Shadow.Raised)
         self.gridLayout_5 = QGridLayout(self.select_qs_number_frame)
         self.gridLayout_5.setObjectName(u"gridLayout_5")
-        self.select_qs_number_horizontalspacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.select_qs_number_horizontalspacer = QSpacerItem(0, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.gridLayout_5.addItem(self.select_qs_number_horizontalspacer, 0, 2, 1, 1)
 
         self.select_qs_number_spinbox = QSpinBox(self.select_qs_number_frame)
         self.select_qs_number_spinbox.setObjectName(u"select_qs_number_spinbox")
+        self.select_qs_number_spinbox.setMinimumSize(QSize(50, 0))
         self.select_qs_number_spinbox.setMaximumSize(QSize(50, 16777215))
         font3 = QFont()
         self.select_qs_number_spinbox.setFont(font3)
@@ -436,24 +438,24 @@ class Ui_Home(object):
 "    background-color: #ffffff;\n"
 "    border-radius: 20px;\n"
 "    border: 1px solid #e0e6ed;\n"
-"    padding: 20px;\n"
+"    padding: 10px;\n"
 "}\n"
 "\n"
 "#quiz_qs_label {\n"
 "    color: #2c3e50;\n"
 "    font-size: 18px;\n"
 "    font-weight: bold;\n"
-"    margin-bottom: 20px;\n"
+"    margin-bottom: 5px;\n"
 "}\n"
 "\n"
 "QRadioButton {\n"
 "    color: #4b5563;\n"
 "    font-size: 14px;\n"
-"    padding: 12px;\n"
+"    padding: 5px;\n"
 "    background-color: #f9fafb;\n"
 "    border: 2px solid #f3f4f6;\n"
 "    border-radius: 10px;\n"
-"    spacing: 10px;\n"
+"    spacing: 5px;\n"
 "}\n"
 "\n"
 "QRadioButton:hover {\n"
@@ -515,6 +517,7 @@ class Ui_Home(object):
 
         self.next_qs_btn = QPushButton(self.quiz_qs_frame)
         self.next_qs_btn.setObjectName(u"next_qs_btn")
+        self.next_qs_btn.setMinimumSize(QSize(100, 0))
         self.next_qs_btn.setFont(font)
         self.next_qs_btn.setStyleSheet(u"QPushButton#next_qs_btn {\n"
 "    background-color: #3498db;\n"
@@ -548,7 +551,7 @@ class Ui_Home(object):
 "    background-color: #ffffff;\n"
 "    border-radius: 20px;\n"
 "    border: 2px solid #2ecc71; \n"
-"    padding: 30px;\n"
+"    padding: 10px;\n"
 "}\n"
 "\n"
 "#show_result_label {\n"
@@ -556,7 +559,7 @@ class Ui_Home(object):
 "    font-size: 26px;\n"
 "    font-weight: 900;\n"
 "    font-family: \"Segoe UI\", sans-serif;\n"
-"    margin-bottom: 20px;\n"
+"    margin-bottom: 10px;\n"
 "}\n"
 "\n"
 "#restart_quiz_btn {\n"
@@ -565,7 +568,7 @@ class Ui_Home(object):
 "    font-weight: bold;\n"
 "    font-size: 14px;\n"
 "    border-radius: 10px;\n"
-"    padding: 12px 25px;\n"
+"    padding: 10px 25px;\n"
 "    text-transform: uppercase;\n"
 "}\n"
 "\n"
@@ -599,14 +602,14 @@ class Ui_Home(object):
 
         self.gridLayout_6.addWidget(self.show_result_label, 2, 0, 1, 1)
 
-        self.show_result_frame_horizontalspacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.show_result_frame_horizontalspacer = QSpacerItem(0, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.gridLayout_6.addItem(self.show_result_frame_horizontalspacer, 2, 1, 1, 1)
 
 
         self.verticalLayout_3.addWidget(self.show_result_frame)
 
-        self.attendquiz_verticalspacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.attendquiz_verticalspacer = QSpacerItem(20, 0, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_3.addItem(self.attendquiz_verticalspacer)
 
@@ -751,12 +754,6 @@ class Ui_Home(object):
 
         self.verticalLayout_4.addWidget(self.answer_frame)
 
-        self.createquiz_other_option_label = QLabel(self.add_new_qs_frame)
-        self.createquiz_other_option_label.setObjectName(u"createquiz_other_option_label")
-        self.createquiz_other_option_label.setFont(font)
-
-        self.verticalLayout_4.addWidget(self.createquiz_other_option_label)
-
         self.opt1_frame = QFrame(self.add_new_qs_frame)
         self.opt1_frame.setObjectName(u"opt1_frame")
         self.opt1_frame.setFrameShape(QFrame.Shape.StyledPanel)
@@ -825,6 +822,7 @@ class Ui_Home(object):
         self.gridLayout_9.setObjectName(u"gridLayout_9")
         self.createquiz_add_qs_btn = QPushButton(self.btn_frame)
         self.createquiz_add_qs_btn.setObjectName(u"createquiz_add_qs_btn")
+        self.createquiz_add_qs_btn.setMinimumSize(QSize(124, 0))
         self.createquiz_add_qs_btn.setMaximumSize(QSize(170, 16777215))
         font5 = QFont()
         font5.setPointSize(10)
@@ -839,7 +837,7 @@ class Ui_Home(object):
 
         self.gridLayout_9.addWidget(self.show_all_qs_btn, 0, 2, 1, 1)
 
-        self.btn_horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.btn_horizontalSpacer = QSpacerItem(0, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.gridLayout_9.addItem(self.btn_horizontalSpacer, 0, 3, 1, 1)
 
@@ -891,7 +889,7 @@ class Ui_Home(object):
 
         self.gridLayout_3.addWidget(self.all_qs_frame, 1, 0, 1, 1)
 
-        self.verticalSpacer = QSpacerItem(20, 5, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.verticalSpacer = QSpacerItem(20, 0, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.gridLayout_3.addItem(self.verticalSpacer, 2, 0, 1, 1)
 
@@ -954,9 +952,9 @@ class Ui_Home(object):
 
         self.retranslateUi(Home)
 
-        self.mainStackWidget.setCurrentIndex(1)
+        self.mainStackWidget.setCurrentIndex(0)
         self.createquiz_sidebar_btn_home.setDefault(False)
-        self.homepage_stackwidget.setCurrentIndex(1)
+        self.homepage_stackwidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(Home)
@@ -989,7 +987,6 @@ class Ui_Home(object):
         self.add_new_qs_label.setText(QCoreApplication.translate("Home", u"Create New Question", None))
         self.createquiz_qs_label.setText(QCoreApplication.translate("Home", u"Question:", None))
         self.createquiz_ans_label.setText(QCoreApplication.translate("Home", u"Answer:  ", None))
-        self.createquiz_other_option_label.setText(QCoreApplication.translate("Home", u"Other Options:", None))
         self.createquiz_opt1_label.setText(QCoreApplication.translate("Home", u"Option 1:", None))
         self.createquiz_opt2_label.setText(QCoreApplication.translate("Home", u"Option 2:", None))
         self.createquiz_opt3_label.setText(QCoreApplication.translate("Home", u"Option 3:", None))
