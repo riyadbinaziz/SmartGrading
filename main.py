@@ -15,58 +15,39 @@ class MyQuizApp(QMainWindow):
         self.ui = Ui_Home()
         self.ui.setupUi(self)
 
-        # Initialize shared components
+        # imports classes from other files
         self.db = QuizDatabase()
         self.current_user_id = None
-
-        # Initialize Auth Handler
         self.auth = AuthHandler(self.ui, self.db, self)
-
         self.create_quiz_logic = CreateQuizHandler(self.ui, self.db)
-
         self.attend_quiz_logic = AttendQuizHandler(self.ui, self.db, self)
-
         self.result_logic = ResultPageHandler(self.ui, self.db, self)
-
         self.logout_logic = LogoutHandler(self.ui, self, self.auth, self.attend_quiz_logic)
 
-        # --- Sidebar Navigation Logic ---
-
-        # 1. Attend Quiz (Resets and switches)
+        # Sidebar button connect
         self.ui.attendquiz_sidebar_btn_home.clicked.connect(self.navigate_to_attend_quiz)
 
-        # 2. Create Quiz
         self.ui.createquiz_sidebar_btn_home.clicked.connect(
             lambda: self.ui.homepage_stackwidget.setCurrentWidget(self.ui.createquiz_stackwidget_page)
         )
 
-        # 3. Results (Refreshes and switches)
         self.ui.results_sidebar_btn_home.clicked.connect(self.navigate_to_results)
 
-        # 4. Log Out (Returns to login and clears user session)
         self.ui.logout_sidebar_btn_home.clicked.connect(self.logout_logic.handle_logout)
 
-        # Ensure we start on the login page
         self.ui.mainStackWidget.setCurrentWidget(self.ui.login_page)
 
-        # This forces the table to fill the entire width of the frame
         self.ui.all_qs_tableview.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
 
-    # This function should be a method of your MyQuizApp class (properly indented)
+    # takes to the results page
     def navigate_to_results(self):
-        # Switch the inner stack to results
         self.ui.homepage_stackwidget.setCurrentWidget(self.ui.results_stackwidget_page)
-        # Call the load function from your results handler
         self.result_logic.load_user_results()
 
+    # takes to attend quiz page
     def navigate_to_attend_quiz(self):
-        """Resets the quiz UI to the selection frame and switches page."""
-        # Switch the inner stack to Attend Quiz page
         self.ui.homepage_stackwidget.setCurrentWidget(self.ui.attendquiz_stackwidget_page)
-        # Call the reset function from your attend quiz handler
         self.attend_quiz_logic.prepare_initial_state()
-
-    
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

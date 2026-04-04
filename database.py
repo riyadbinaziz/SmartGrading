@@ -7,7 +7,6 @@ class QuizDatabase:
         self.create_tables()
 
     def create_tables(self):
-        # 1. USERS
         self.cursor.execute('''
             CREATE TABLE IF NOT EXISTS users (
                 user_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -16,7 +15,6 @@ class QuizDatabase:
             )
         ''')
 
-        # 2. QUESTIONS 
         self.cursor.execute('''
             CREATE TABLE IF NOT EXISTS questions (
                 question_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -28,7 +26,6 @@ class QuizDatabase:
             )
         ''')
 
-        # 3. RESULTS 
         self.cursor.execute('''
             CREATE TABLE IF NOT EXISTS results (
                 result_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -42,7 +39,9 @@ class QuizDatabase:
         ''')
         self.conn.commit()
 
-    # --- USER FEATURES ---
+    # USER TABLE STUFF
+
+    # adds a new to the db
     def add_user(self, username, password):
         try:
             self.cursor.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
@@ -51,11 +50,14 @@ class QuizDatabase:
         except sqlite3.IntegrityError:
             return False 
 
+    # checks if a user exists for authentication
     def check_user(self, username, password):
         self.cursor.execute("SELECT * FROM users WHERE username = ? AND password = ?", (username, password))
         return self.cursor.fetchone()
 
-    # --- QUESTION FEATURES ---
+    # QUESTION TABLE STUFF
+
+    # add a new question the to db
     def add_question(self, q_text, correct, opt1, opt2, opt3):
         self.cursor.execute(
             "INSERT INTO questions (question_text, correct_answer, option1, option2, option3) VALUES (?, ?, ?, ?, ?)",
@@ -63,22 +65,26 @@ class QuizDatabase:
         )
         self.conn.commit()
 
+    # returns the total number of qs in the db
     def get_question_count(self):
         """Returns total number of questions available."""
         self.cursor.execute("SELECT COUNT(*) FROM questions")
         return self.cursor.fetchone()[0]
 
+    # gives random qs from the db
     def get_random_questions(self, limit):
         self.cursor.execute("SELECT * FROM questions ORDER BY RANDOM() LIMIT ?", (limit,))
         return self.cursor.fetchall()
 
+    # gives all the qs for the table
     def get_all_questions(self):
         """Fetches all fields: id, text, answer, opt1, opt2, opt3"""
-        # Using * ensures you get all 6 columns
         self.cursor.execute("SELECT * FROM questions")
         return self.cursor.fetchall()
 
-    # --- RESULT FEATURES ---
+    # RESULT TABLE STUFF
+
+    # saves quiz result to the db
     def save_quiz_result(self, user_id, score, total):
         percentage = round((score / total * 100), 2) if total > 0 else 0
         self.cursor.execute(
@@ -87,9 +93,8 @@ class QuizDatabase:
         )
         self.conn.commit()
 
+    # gets user history from the db
     def get_user_history(self, user_id):
-        """Returns formatted history for the UI TableView."""
-        # Using strftime to make the date look cleaner (e.g., 2026-03-26)
         query = """
             SELECT score, total_questions, percentage, strftime('%Y-%m-%d %H:%M', date_taken) 
             FROM results 
