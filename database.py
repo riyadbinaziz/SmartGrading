@@ -45,7 +45,7 @@ class QuizDatabase:
     def add_user(self, username, password):
         try:
             self.cursor.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
-            self.conn.commit()
+            self.conn.commit() # saves permanently to db
             return True
         except sqlite3.IntegrityError:
             return False 
@@ -54,6 +54,7 @@ class QuizDatabase:
     def check_user(self, username, password):
         self.cursor.execute("SELECT * FROM users WHERE username = ? AND password = ?", (username, password))
         return self.cursor.fetchone()
+        # user data format : (user_id, "username", "password")
 
     # QUESTION TABLE STUFF
 
@@ -67,7 +68,6 @@ class QuizDatabase:
 
     # returns the total number of qs in the db
     def get_question_count(self):
-        """Returns total number of questions available."""
         self.cursor.execute("SELECT COUNT(*) FROM questions")
         return self.cursor.fetchone()[0]
 

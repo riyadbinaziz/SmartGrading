@@ -849,7 +849,7 @@ class Ui_Home(object):
         self.all_qs_tableview = QTableView(self.all_qs_frame)
         self.all_qs_tableview.setObjectName(u"all_qs_tableview")
         self.all_qs_tableview.setStyleSheet(u"QTableView {\n"
-"    border: 1px solid #e0e6ed;\n"
+"    border: 1000px solid #e0e6ed;\n"
 "    gridline-color: #f3f4f6;\n"
 "    border-radius: 15px;\n"
 "    background-color: white;\n"

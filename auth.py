@@ -18,6 +18,7 @@ class AuthHandler:
             QMessageBox.warning(None, "Input Error", "Please fill in all fields.")
             return
 
+
         success = self.db.add_user(username, password)
 
         if success:
@@ -40,7 +41,6 @@ class AuthHandler:
         if user_data:
             self.main_window.current_user_id = user_data[0]
             QMessageBox.information(None, "Login Success", f"Welcome back, {username}!")
-            
             self.ui.mainStackWidget.setCurrentWidget(self.ui.home_page)
             self.ui.homepage_stackwidget.setCurrentWidget(self.ui.attendquiz_stackwidget_page)
         else:
