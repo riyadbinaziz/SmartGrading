@@ -1,5 +1,7 @@
 import sys
+import os
 from PySide6 import QtWidgets
+from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QApplication, QMainWindow
 from ui_main import Ui_Home
 from database import QuizDatabase
@@ -50,6 +52,10 @@ class MyQuizApp(QMainWindow):
         self.attend_quiz_logic.prepare_initial_state()
 
 if __name__ == "__main__":
+    os.environ["QT_ENABLE_HIGHDPI_SCALING"] = "1"
+    QApplication.setHighDpiScaleFactorRoundingPolicy(
+    Qt.HighDpiScaleFactorRoundingPolicy.PassThrough
+)
     app = QApplication(sys.argv)
     window = MyQuizApp()
     window.show()
